@@ -74,6 +74,7 @@
             <h3>Informasi</h3>
             <p>Anda dapat menambahkan konten di sini.</p>
             <p>Website ini dirancang untuk memberikan informasi dasar tentang topik tertentu.</p>
+            <p>Terima kasih telah mengunjungi website saya!</p>
         </section>
     </main>
     
