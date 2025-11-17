@@ -1,7 +1,15 @@
 body {
     background-color: #1a1a1a;
     color: #ffffff;
+<<<<<<< HEAD
     font-family: Arial;
+=======
+<<<<<<< HEAD
+    font-family: 'Times New Roman';
+=======
+    font-family: 'Calibri';
+>>>>>>> bf8b2f22975a5e4732382d407efb281325cbbef8
+>>>>>>> 3e8a93dabb768b169cee5d5932d9f7e204ff121d
     margin: 0;
     padding: 0;
 }
