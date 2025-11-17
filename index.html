@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Halaman Web Sederhana</title>
+    <style>
+        :root{
+            --bg:#f4f7fb; --card:#fff; --accent:#0066cc; --muted:#6b7280;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#111}
+        .container{max-width:960px;margin:40px auto;padding:0 16px}
+        header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+        .brand{font-weight:700;color:var(--accent);letter-spacing:0.4px}
+        nav a{margin-left:16px;color:var(--muted);text-decoration:none}
+        .hero{background:linear-gradient(90deg, rgba(0,102,204,0.08), transparent);padding:36px;border-radius:12px;display:flex;gap:24px;align-items:center}
+        .hero .text{flex:1}
+        h1{margin:0 0 8px;font-size:28px}
+        p.lead{margin:0 0 16px;color:var(--muted)}
+        .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+        .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 1px 4px rgba(12,18,26,0.06)}
+        form{display:grid;gap:10px}
+        input,textarea{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px;font:inherit}
+        footer{margin:40px 0 20px;color:var(--muted);font-size:14px;text-align:center}
+        @media (max-width:520px){h1{font-size:22px}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">Situs Sederhana</div>
+            <nav>
+                <a href="#features">Fitur</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="text">
+                <h1>Selamat datang!</h1>
+                <p class="lead">Contoh halaman web sederhana dengan HTML, CSS, dan sedikit JavaScript. Cocok sebagai titik awal proyek Anda.</p>
+                <button class="btn" id="cta">Hubungi Kami</button>
+            </div>
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='120'><rect rx='12' width='100%' height='100%' fill='%230066cc' opacity='0.12'/></svg>" alt="" width="140" height="120" style="border-radius:8px">
+        </section>
+
+        <section id="features" class="grid" aria-label="Fitur">
+            <div class="card">
+                <h3>Ringan</h3>
+                <p class="lead" style="margin-top:8px">Struktur sederhana, cepat dimodifikasi.</p>
+            </div>
+            <div class="card">
+                <h3>Responsif</h3>
+                <p class="lead" style="margin-top:8px">Tata letak otomatis menyesuaikan layar kecil.</p>
+            </div>
+            <div class="card">
+                <h3>Mudah Dikembangkan</h3>
+                <p class="lead" style="margin-top:8px">Tambahkan komponen dan gaya sesuai kebutuhan.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="card" style="margin-top:20px">
+            <h2>Kontak</h2>
+            <form id="contactForm" novalidate>
+                <input type="text" id="name" placeholder="Nama" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <textarea id="message" rows="4" placeholder="Pesan" required></textarea>
+                <div style="display:flex;gap:8px;justify-content:flex-end">
+                    <button type="reset" class="btn" style="background:#e5e7eb;color:#111">Bersihkan</button>
+                    <button type="submit" class="btn">Kirim</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            &copy; <span id="year"></span> Situs Sederhana — Dibuat untuk demo.
+        </footer>
+    </div>
+
+    <script>
+        // interaksi sederhana
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('cta').addEventListener('click', () => {
+            document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if(!name || !email || !msg){
+                alert('Silakan lengkapi semua kolom.');
+                return;
+            }
+            // contoh: tampilkan ringkasan dan reset form
+            alert('Terima kasih, ' + name + '! Pesan Anda telah diterima.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+<section id="games" class="grid" aria-label="Game">
+    <div class="card">
+        <h3 style="color: #ff4757;">Game Aksi</h3>
+        <p class="lead" style="margin-top:8px;color: #2f3542;">Rasakan adrenalin dengan game aksi yang mendebarkan.</p>
+        <img src="https://example.com/icon-action-game.png" alt="Ikon Game Aksi" width="50" height="50">
+    </div>
+    <div class="card">
+        <h3 style="color: #1e90ff;">Game Petualangan</h3>
+        <p class="lead" style="margin-top:8px;color: #2f3542;">Jelajahi dunia baru dan temukan rahasia tersembunyi.</p>
+        <img src="https://example.com/icon-adventure-game.png" alt="Ikon Game Petualangan" width="50" height="50">
+    </div>
+    <div class="card">
+        <h3 style="color: #2ed573;">Game Strategi</h3>
+        <p class="lead" style="margin-top:8px;color: #2f3542;">Rencanakan langkah Anda dan menangkan pertempuran.</p>
+        <img src="https://example.com/icon-strategy-game.png" alt="Ikon Game Strategi" width="50" height="50">
+    </div>
+</section></div>
