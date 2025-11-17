@@ -1,7 +1,11 @@
 body {
     background-color: #1a1a1a;
     color: #ffffff;
+<<<<<<< HEAD
     font-family: 'Times New Roman';
+=======
+    font-family: 'Calibri';
+>>>>>>> bf8b2f22975a5e4732382d407efb281325cbbef8
     margin: 0;
     padding: 0;
 }
